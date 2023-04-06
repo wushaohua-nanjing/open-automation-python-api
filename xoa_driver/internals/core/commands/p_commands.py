@@ -229,10 +229,10 @@ class P_CAPABILITIES:
         can_auto_neg_base_r: XmpField[xt.XmpInt] = XmpField(xt.XmpInt)  # integer, whether the port currently can perform BASE-R auto-negotiation (as opposed to RJ45 BASE-T)
         can_pma_error_pulse: XmpField[xt.XmpInt] = XmpField(xt.XmpInt)  # integer, whether this port supports 'PMA pulse error injection'
         is_chimera: XmpField[xt.XmpInt] = XmpField(xt.XmpInt)  # integer, whether this is a Chimera port
-        has_p2p_loop_partner: XmpField[xt.XmpInt] = XmpField(xt.XmpInt)  # integer, whether this port currently has a port-to-port loop partner
-        p2p_loop_partner: XmpField[xt.XmpInt] = XmpField(xt.XmpInt)  # integer, The port-to-port loop partner for the port. N/A = -1.
-        traffic_engine: XmpField[xt.XmpInt] = XmpField(xt.XmpInt, choices=TrafficEngine)  # integer, Enabled traffic engine on port. 0x01 = TGA, 0x02 = uTGA.
-        reconc_sublayer: XmpField[xt.XmpInt] = XmpField(xt.XmpInt, choices=ReconciliationSublayerSupport)  # integer, Reconciliation Sublayer support, bitmask, 0 = fault signalling not support; 1 = fault signalling supported (XMP: P_FAULTSTATUS/P_FAULTSIGNALING)
+        #has_p2p_loop_partner: XmpField[xt.XmpInt] = XmpField(xt.XmpInt)  # integer, whether this port currently has a port-to-port loop partner
+        #p2p_loop_partner: XmpField[xt.XmpInt] = XmpField(xt.XmpInt)  # integer, The port-to-port loop partner for the port. N/A = -1.
+        #traffic_engine: XmpField[xt.XmpInt] = XmpField(xt.XmpInt, choices=TrafficEngine)  # integer, Enabled traffic engine on port. 0x01 = TGA, 0x02 = uTGA.
+        #reconc_sublayer: XmpField[xt.XmpInt] = XmpField(xt.XmpInt, choices=ReconciliationSublayerSupport)  # integer, Reconciliation Sublayer support, bitmask, 0 = fault signalling not support; 1 = fault signalling supported (XMP: P_FAULTSTATUS/P_FAULTSIGNALING)
 
     def get(self) -> "Token[GetDataAttr]":
         """Get the internal limits, aka. capabilities, of the port.
